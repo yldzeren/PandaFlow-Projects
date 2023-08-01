@@ -1,0 +1,14 @@
+<h1>Farm Management</h1>
+
+<!-- Animal List -->
+<div *ngIf="animals.length > 0">
+  <h2>Animal List:</h2>
+  <ul>
+    <li *ngFor="let animal of animals">{{ animal.name }} <button (click)="removeAnimal(animal)">Remove</button></li>
+  </ul>
+</div>
+
+<!-- Add Animal Form -->
+<h2>Add Animal:</h2>
+<input type="text" [(ngModel)]="newAnimalName" placeholder="Enter animal name" />
+<button (click)="addAnimal()">Add Animal</button>
